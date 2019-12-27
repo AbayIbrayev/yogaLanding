@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   //adding a click event to each child in the info-header element through Delegation
-  info.addEventListener('click', function(event) {
+  info.addEventListener('click', (event) => {
     let target = event.target;
     if (target && target.classList.contains('info-header-tab')) {
     //through this for loop we go through each tab and check if the target
@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
   //setting the deadline
 
-  let deadline = '2019-12-28';
+  let deadline = '2019-12-31';
 
   //calculating and rounding numbers using the Date.parse and Math.floor methods
   function getTimeRemaining(endtime) {
@@ -108,18 +108,17 @@ window.addEventListener('DOMContentLoaded', function() {
   let more = document.querySelector('.more'),
       overlay = document.querySelector('.overlay'),
       close = document.querySelector('.popup-close');
-
-  more.addEventListener('click', function () {
+      
+  more.addEventListener('click', () => {
     overlay.style.display = 'block';
     this.classList.add('more-splash');
     document.body.style.overflow = 'hidden';
   });
 
-  close.addEventListener('click', function() {
+  close.addEventListener('click', () => {
     overlay.style.display = 'none';
     more.classList.remove('more-splash');
     document.body.style.overflow = '';
-
   });
 
 
