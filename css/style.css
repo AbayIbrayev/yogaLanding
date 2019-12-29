@@ -442,6 +442,7 @@ header ul li:before {
 }
 .content .contact-img img {
   height: 550px;
+  max-width: 100%;
   transform: translateY(-13%);
 }
 .content .contact-form {
