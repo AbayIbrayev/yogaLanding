@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
   //setting the deadline
 
-  let deadline = '2019-12-31';
+  let deadline = '2020-01-01';
 
   //calculating and rounding numbers using the Date.parse and Math.floor methods
   function getTimeRemaining(endtime) {
@@ -132,27 +132,28 @@ window.addEventListener('DOMContentLoaded', function() {
       failure: 'Something went wrong!'
   };
 
-  let form = document.querySelector('.main-form'),
-      input = form.getElementsByTagName('input'),
+  let form = document.querySelectorAll('.main-form, #form'),
+      input = form.forEach(function(item) {item.getElementsByTagName('input');}),
       statusMessage = document.createElement('div');
 
       statusMessage.classList.add('status');
   
-  form.addEventListener('submit', function(event) {
+  form.forEach(function(item) {
+    item.addEventListener('submit', function (event) {
       event.preventDefault();
       form.appendChild(statusMessage);
 
       let request = new XMLHttpRequest();
       request.open('POST', 'server.php');
       // request.setRequestHeader ('Content-Type', 'application/x-www-form-urlencoded');
-      request.setRequestHeader ('Content-type', 'application/json; charset=utf-8');
+      request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
 
 
       let formData = new FormData(form);
 
       //sends form data in a JSON format
       let obj = {};
-      formData.forEach(function(value, key) {
+      formData.forEach(function (value, key) {
         obj[key] = value;
       });
       let json = JSON.stringify(obj);
@@ -162,20 +163,22 @@ window.addEventListener('DOMContentLoaded', function() {
 
       request.send(formData);
 
-      request.addEventListener('readystatechange', function() {
+      request.addEventListener('readystatechange', function () {
         if (request.readyState < 4) {
           statusMessage.innerHTML = message.loading;
-        } else if(request.readyState === 4 && request.status == 200) {
+        } else if (request.readyState === 4 && request.status == 200) {
           statusMessage.innerHTML = message.success;
         } else {
           statusMessage.innerHTML = message.failure;
         }
       });
 
-        for (let i = 0; i < input.length; i++) {
-          input[i].value = '';
-        }
+      for (let i = 0; i < input.length; i++) {
+        input[i].value = '';
+      }
+    });
   });
+  
 /* --------------------------------- Slider --------------------------------- */
   //parameter of the current slide
   let slideIndex = 1,
