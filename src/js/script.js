@@ -1,3 +1,5 @@
+require('nodelist-foreach-polyfill'); //for forEach method in old IE browsers
+require('formdata-polyfill'); //for the forms data in the old browsers
 /* --------------- checks for the whole DOM tree to be loaded --------------- */
 window.addEventListener('DOMContentLoaded', function() {
   'use strict';

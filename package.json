@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/AbayIbrayev/yogaLanding/src",
   "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "formdata-polyfill": "^3.0.19",
+    "nodelist-foreach-polyfill": "^1.2.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   }
