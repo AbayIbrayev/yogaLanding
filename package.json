@@ -1,0 +1,23 @@
+{
+  "name": "17-landing",
+  "version": "1.0.0",
+  "description": "Yoga Tours Landing page using JavaScript",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbayIbrayev/yogaLanding.git"
+  },
+  "author": "Abay Ibrayev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AbayIbrayev/yogaLanding/issues"
+  },
+  "homepage": "https://github.com/AbayIbrayev/yogaLanding#readme",
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
